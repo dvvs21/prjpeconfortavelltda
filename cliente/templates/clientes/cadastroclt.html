@@ -1,0 +1,123 @@
+<!-- {% extends "base.html" %} -->
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/cadastroclt.css' %}">
+{% endblock %}
+
+
+
+
+{% block title %}
+    <title>Portal do Cliente </title>
+{% endblock %}
+
+{% block menu %}
+    <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
+        <div class="navbar-nav">
+            <a href="/" class="nav-link">Início</a>
+            <a href="{% url 'clientes:listar' %}" class="nav-link">Listar</a>
+            <a href="{% url 'clientes:cadastrar' %}" class="nav-link">Cadastrar</a>
+            <a href="{% url 'contato:contato' %}" class="nav-link">Contato</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block corpo %}
+    <main class="container m-2 mx-auto my-font-family">
+
+       <div class="row">
+            <div class="col text-center m-0">
+                <h2 class="mt-2 mb-5 ">Cadastro de Cliente</h2>
+            </div>
+        </div>
+
+
+
+        <form action="{% url 'clientes:cadastrar' %}" method="POST" name="frmCadastrarCliente" id="idFrmCadastrarCliente">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for='idNome'>Nome</label>
+                <input class="form-control" type='text' id='idNome' name='nome' placeholder='Informe o nome do cliente' required>
+            </div>
+            <div class="form-group">
+                <label for='idCPF'>CPF</label>
+                <input class="form-control" type='text' id='idCPF' name='cpf' placeholder='Informe o CPF do cliente' required>
+            </div>
+            <div class="form-group">
+                <label for='idEndereco'>Endereço</label>
+                <input class="form-control" type='text' id='idEndereco' name='endereco' placeholder='Informe o endereço do cliente' required>
+            </div>
+
+
+
+            <div class="form-group">
+                <p>Escolha seu estado de domicílio:</p>
+
+                <label  for='idEstadoDomicilio'> 
+                    <select class="form-control" id='idEstadoDomicilio' name='estado_domicilio' required>
+                    <option value="/">Selecione...</option> 
+                    <option value="RJ">Rio de Janeiro (RJ)</option>   
+                    <option value="SP">São paulo (SP)</option>  
+                    <option value="MG">Minas Gerais (MG)</option>  
+                    <option value="ES">Espirito Santo (ES)</option>  
+                    <option value="PR">Paraná (PR)</option> 
+                    <option value="BA">Bahia (BA)</option> 
+                    <option value="RS">Rio Grande do Sul (RS)</option> 
+                    </select>
+
+                </label>
+            </div>
+            <br>
+
+            <div class="form-row">
+                <label for='idCidade'>Cidade</label>
+                <input class="form-control" type='text' id='idCidade' name='cidade' placeholder='Informe a cidade do cliente' required>
+            </div>
+
+            <br>
+
+            <div class ="form-row">
+                <p>Gênero</p>
+                <label for='idGenero'>
+                    <select class="form-control" id='idGenero' name='genero' required>   
+                    <option value="/">Selecione...</option> 
+                    <option value="M"> Masculino</option> 
+                    <option value="F"> Feminino </option>
+                    <option value="O"> Outro </option>
+                    </select> 
+                </label>
+
+            </div>
+            <br>
+            <div class="form-row">
+                <p>Formas de contato</p>
+                <label for='idContato'>
+                    <select class="form-control" id="idFormasContato" name="contato" required >
+                    <option value="/">Selecione...</option>     
+                    <option value="T" > Telefone </option>
+                    <option value="E" > Email </option>
+                    <option value="F" > Fax </option>
+                    <option value="C" > Carta </option>
+                    </select>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for='idEmail'>Email</label>
+                <input class="form-control" type='email' id='idEmail' name='email' placeholder='Informe o email do cliente' required>
+            </div>
+            <div class="form-group">
+                <label for='idTelefone'>Telefone</label>
+                <input class="form-control" type='number' id='idTelefone' name='telefone' placeholder='Informe o telefone do cliente' required>
+            </div>
+            <div class='form-group text-center'>
+                <input type='reset'  value='Limpar' class='btn btn-secondary btn-md'>
+                <input type='submit' value='Cadastrar' class='btn btn-secondary btn-md' id="btnCadastrarCliente">
+            </div>
+        </form>
+    </main>
+
+
+
+{% endblock %}
+

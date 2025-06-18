@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block title %}
+    <title>Pé Confortável</title>
+{% endblock %}
+
+
+{% block titulo_pagina %}
+    <h1 class="text-center my-h1 my-font-family">Vendas</h1>
+{% endblock %}
+
+
+
+{% block menu %}
+    <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
+                <div class="navbar-nav">
+                    <a href="/" class="nav-link">Início</a>
+                    <a href="{% url 'clientes:listar' %}" class="nav-link">Cliente</a>
+                    <a href="{% url 'fornecedor:listar' %}" class="nav-link">Fabricante</a>
+                    <a href="{% url 'produtos:listar' %}" class="nav-link">Produtos</a>
+                    <a href="#" class="nav-link">Vendas</a>
+                    <a href="{% url 'contato:contato' %}" class="nav-link">Contato</a>
+                </div>
+    </div>
+{% endblock %}  
+
+{% block corpo %}
+    <main class="container m-2 mx-auto color-text my-font-family my-body">
+        <div class="row">
+            <div class="col text-center m-0">
+                <p class="my-p"></p>
+            </div>
+        </div>
+            <div>
+                <img src="{% static 'static/img/paginaemconstrucao.jpg' %}" class="mx-auto d-block w-75" >
+            </div>
+            
+       
+    </main>
+{% endblock %}

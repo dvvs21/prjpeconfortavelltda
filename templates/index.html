@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <title>Pé Confortável</title>
+{% endblock %}
+
+
+{% block titulo_pagina %}
+    <h1 class="text-center my-h1 my-font-family">Pé Confortável</h1>
+{% endblock %}
+
+
+
+{% block menu %}
+    <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
+                <div class="navbar-nav">
+                    <a href="/" class="nav-link">Início</a>
+                    <a href="{% url 'clientes:listar' %}" class="nav-link">Cliente</a>
+                    <a href="{% url 'fornecedor:listar' %}" class="nav-link">Fabricante</a>
+                    <a href="{% url 'produtos:listar' %}" class="nav-link">Produtos</a>
+                    <a href="{% url 'venda:listar' %}" class="nav-link">Vendas</a>
+                    <a href="{% url 'contato:contato' %}" class="nav-link">Contato</a>
+                </div>
+    </div>
+{% endblock %}  
+
+{% block corpo %}
+    <main class="container m-2 mx-auto color-text my-font-family my-body">
+        <div class="row mb-50">
+            <div class="col text-center m-0">
+                <p class="my-p">Onde o seu conforto começa pelos pés</p>
+            </div>
+        </div>
+            
+        <br>
+        <br>
+        <br>
+
+        <div class="row m-80">
+            <div class="col-md-6">
+                <h2>Sobre Nós</h2>
+                <p class="my-p">Na Pé Confortável, acreditamos que cada passo importa. Desde 2025, oferecemos calçados que combinam estilo, qualidade e conforto para toda a família.</p>
+            </div>
+            <div class="col-md-6">
+                
+                <img src="{% static 'static/img/img1.jpg' %}" class="mx-auto d-block w-50" alt="Fachada da loja">
+            </div>
+        </div>
+            
+        <br>
+        <br>
+        <br>
+        
+        <div class="row m-80 p-10">
+            <div class="col-md-6 order-md-2">
+                <h2>Nossos Produtos</h2>
+                <p class="my-p">Trabalhamos com uma ampla variedade de marcas de calçados: Adidão, Naike, Pulma, Olímpicos, Pontão, Meião, Reboco, Paquetás, Mizduno, Tiadora. Nossos produtos são selecionados com rigor para garantir conforto e durabilidade.</p>
+            </div>
+            <div class="col-md-6 order-md-1">
+                
+                <img src="{% static 'static/img/img2.jpg' %}" class="mx-auto d-block w-25" alt="Produtos em destaque">
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+       
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <h2>Atendimento Personalizado</h2>
+                <p class="my-p">Nosso atendimento é feito por profissionais preparados para te ajudar a encontrar o calçado ideal para sua necessidade, com simpatia e respeito.</p>
+            </div>
+            <div class="col-md-6 order-md-1">
+                
+                <img src="{% static 'static/img/img3.jpg' %}" class="mx-auto d-block w-50" alt="Produtos em destaque">
+            </div>
+        </div>
+       
+        <br>
+        <br>
+        <br>
+       
+    </main>
+{% endblock %}

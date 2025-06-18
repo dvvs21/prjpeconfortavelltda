@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Pé Confortável</title>
+{% endblock %}
+
+
+
+{% block menu %}
+    <div class="collapse navbar-collapse justify-content-end" id="mynavbar">
+                <div class="navbar-nav">
+                    <a href="/" class="nav-link">Início</a>
+                    <a href="{% url 'cliente:listar' %}" class="nav-link">Cliente</a>
+                    <a href="{% url 'fabricante:listar' %}" class="nav-link">Fabricante</a>
+                    <a href="{% url 'produto:listar' %}" class="nav-link">Produtos</a>
+                    <a href="{% url 'venda:listar' %}" class="nav-link">Vendas</a>
+                    <a href="{% url 'contato:contato' %}" class="nav-link">Contato</a>
+                </div>
+    </div>
+{% endblock %}  
